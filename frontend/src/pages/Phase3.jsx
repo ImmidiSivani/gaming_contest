@@ -9,7 +9,7 @@ const LANGUAGE_OPTIONS = [
   { id: 63, name: "JavaScript" },
   { id: 62, name: "Java" },
   { id: 52, name: "C" },
-  { id: 50, name: "C++" },
+  { id: 54, name: "C++" },
   { id: 4, name: "PHP" },
   { id: 10, name: "Ruby" },
   { id: 71, name: "Python" },

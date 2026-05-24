@@ -74,6 +74,16 @@ const pollResult = async (token) => {
 };
 
 // 🔹 Run single test case
+const normalizeOutput = (value) => {
+  if (typeof value !== 'string') return '';
+  return value
+    .replace(/\r/g, '')
+    .split('\n')
+    .map((line) => line.trimEnd())
+    .join('\n')
+    .trim();
+};
+
 const runTestCase = async ({ sourceCode, languageId, input, expectedOutput }) => {
   try {
     const token = await submitCode({
@@ -84,8 +94,8 @@ const runTestCase = async ({ sourceCode, languageId, input, expectedOutput }) =>
 
     const result = await pollResult(token);
 
-    const actualOutput = result.stdout.trim();
-    const expected = expectedOutput.trim();
+    const actualOutput = normalizeOutput(result.stdout);
+    const expected = normalizeOutput(expectedOutput);
 
     const passed =
       result.statusId === 3 && actualOutput === expected;
@@ -105,7 +115,7 @@ const runTestCase = async ({ sourceCode, languageId, input, expectedOutput }) =>
     return {
       passed: false,
       actualOutput: '',
-      expectedOutput,
+      expectedOutput: normalizeOutput(expectedOutput),
       statusDescription: 'Execution Error',
       executionTime: null,
       memory: null,

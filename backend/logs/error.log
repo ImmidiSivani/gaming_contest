@@ -313,3 +313,29 @@
     at Object.validateAndUnlockPhase (C:\Users\22wh1\OneDrive\Documents\ONEDRIVE\Attachments\Desktop\gaming_contest\backend\services\phaseService.js:26:19)
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
     at async unlockPhase (C:\Users\22wh1\OneDrive\Documents\ONEDRIVE\Attachments\Desktop\gaming_contest\backend\controllers\phaseController.js:9:20)
+2026-05-05 19:20:32 [error]: AppError: Already answered correctly
+    at Object.submitMCQ (C:\Users\22wh1\OneDrive\Documents\ONEDRIVE\Attachments\Desktop\gaming_contest\backend\services\submissionService.js:34:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async submitMCQ (C:\Users\22wh1\OneDrive\Documents\ONEDRIVE\Attachments\Desktop\gaming_contest\backend\controllers\submissionController.js:10:20)
+2026-05-05 19:20:36 [error]: AppError: Already answered correctly
+    at Object.submitMCQ (C:\Users\22wh1\OneDrive\Documents\ONEDRIVE\Attachments\Desktop\gaming_contest\backend\services\submissionService.js:34:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async submitMCQ (C:\Users\22wh1\OneDrive\Documents\ONEDRIVE\Attachments\Desktop\gaming_contest\backend\controllers\submissionController.js:10:20)
+2026-05-05 19:20:40 [error]: AppError: Already answered correctly
+    at Object.submitMCQ (C:\Users\22wh1\OneDrive\Documents\ONEDRIVE\Attachments\Desktop\gaming_contest\backend\services\submissionService.js:34:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async submitMCQ (C:\Users\22wh1\OneDrive\Documents\ONEDRIVE\Attachments\Desktop\gaming_contest\backend\controllers\submissionController.js:10:20)
+2026-05-08 22:35:06 [error]: Error: Invalid email or password
+    at Object.login (C:\Users\22wh1\OneDrive\Documents\ONEDRIVE\Attachments\Desktop\gaming_contest\backend\services\authService.js:59:19)
+    at async login (C:\Users\22wh1\OneDrive\Documents\ONEDRIVE\Attachments\Desktop\gaming_contest\backend\controllers\authController.js:17:20)
+2026-05-23 13:27:01 [error]: AppError: No test cases available for this question
+    at runDebugCode (C:\Users\22wh1\OneDrive\Documents\ONEDRIVE\Attachments\Desktop\gaming_contest\backend\controllers\submissionController.js:45:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-05-23 14:45:34 [error]: AppError: Already answered correctly
+    at Object.submitMCQ (C:\Users\22wh1\OneDrive\Documents\ONEDRIVE\Attachments\Desktop\gaming_contest\backend\services\submissionService.js:34:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async submitMCQ (C:\Users\22wh1\OneDrive\Documents\ONEDRIVE\Attachments\Desktop\gaming_contest\backend\controllers\submissionController.js:10:20)
+2026-05-23 14:50:21 [error]: Error: Incorrect phase password
+    at Object.validateAndUnlockPhase (C:\Users\22wh1\OneDrive\Documents\ONEDRIVE\Attachments\Desktop\gaming_contest\backend\services\phaseService.js:63:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async unlockPhase (C:\Users\22wh1\OneDrive\Documents\ONEDRIVE\Attachments\Desktop\gaming_contest\backend\controllers\phaseController.js:9:20)

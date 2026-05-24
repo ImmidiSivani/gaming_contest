@@ -5,15 +5,16 @@ const calculateMCQScore = ({ isCorrect, marks, negativeMarks }) => {
   return { score: 0, penalty: negativeMarks || 0 };
 };
 
-const calculateDebugScore = ({ isCorrect, marks, wrongSubmissionPenalty, hintsUsed, hintPenalty }) => {
-  if (!isCorrect) {
-    return { score: 0, penalty: wrongSubmissionPenalty || 0 };
-  }
+const calculateDebugScore = ({ passedTestCases, totalTestCases, marks, wrongSubmissionPenalty, hintsUsed = 0, hintPenalty = 0, isFirstAttempt = true }) => {
+  if (totalTestCases === 0) return { score: 0, penalty: 0 };
 
+  const ratio = passedTestCases / totalTestCases;
+  const baseScore = Math.floor((marks || 0) * ratio);
   const hintDeduction = (hintsUsed || 0) * (hintPenalty || 0);
-  const finalScore = Math.max(0, marks - hintDeduction);
+  const score = Math.max(0, baseScore - hintDeduction);
+  const penalty = (!isFirstAttempt && passedTestCases < totalTestCases) ? (wrongSubmissionPenalty || 0) : 0;
 
-  return { score: finalScore, penalty: hintDeduction };
+  return { score, penalty };
 };
 
 const calculateCodingScore = ({ passedTestCases, totalTestCases, marks, wrongSubmissionPenalty, isFirstAttempt }) => {

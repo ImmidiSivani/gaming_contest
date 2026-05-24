@@ -87,6 +87,7 @@ export default function Dashboard() {
         <p><strong>Total Score:</strong> {user.totalScore || 0}</p>
         <p><strong>Phase 1 Score:</strong> {user.phase1Score || 0}</p>
         <p><strong>Phase 2 Score:</strong> {user.phase2Score || 0}</p>
+        <p><strong>Phase 3 Score:</strong> {user.phase3Score || 0}</p>
         
         {/* Show generated passwords if qualified */}
         {user.phasePasswords?.phase2?.password && (

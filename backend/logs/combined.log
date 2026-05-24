@@ -654,3 +654,132 @@
 2026-05-04 20:04:38 [info]: CODE: user=69f8a80c9b0d0007782ae707, status=correct, score=20
 2026-05-04 20:04:49 [info]: Socket connected: userId=69f8a80c9b0d0007782ae707, socketId=6ya0VRYG0r5qQfRnAAAB
 2026-05-04 20:04:56 [info]: Socket disconnected: userId=69f8a80c9b0d0007782ae707, socketId=6ya0VRYG0r5qQfRnAAAB
+2026-05-05 19:17:11 [info]: Socket.IO initialized
+2026-05-05 19:17:11 [info]: 🚀 Server running on port 5000
+2026-05-05 19:17:11 [info]: MongoDB connected: localhost
+2026-05-05 19:19:15 [info]: New user registered: demo@gmail.com
+2026-05-05 19:19:28 [info]: User logged in: demo@gmail.com
+2026-05-05 19:19:34 [info]: MCQ: user=69f9f55be66ae58f66fef5f4, correct=true, score=5
+2026-05-05 19:19:39 [info]: MCQ: user=69f9f55be66ae58f66fef5f4, correct=true, score=5
+2026-05-05 19:19:42 [info]: MCQ: user=69f9f55be66ae58f66fef5f4, correct=true, score=5
+2026-05-05 19:19:42 [info]: Qualification check for user 69f9f55be66ae58f66fef5f4 after phase 1: score=15, rank=8/10, threshold=10, cutoffRank=1, qualified=true
+2026-05-05 19:19:42 [info]: User 69f9f55be66ae58f66fef5f4 qualified for phase 2, password generated
+2026-05-05 19:19:42 [info]: Phase 1 completed → Qualified=true
+2026-05-05 19:20:09 [info]: Socket connected: userId=69f9f55be66ae58f66fef5f4, socketId=bT6oZnIw1C2EXWZYAAAB
+2026-05-05 19:20:28 [info]: Socket disconnected: userId=69f9f55be66ae58f66fef5f4, socketId=bT6oZnIw1C2EXWZYAAAB
+2026-05-05 19:20:32 [error]: AppError: Already answered correctly
+    at Object.submitMCQ (C:\Users\22wh1\OneDrive\Documents\ONEDRIVE\Attachments\Desktop\gaming_contest\backend\services\submissionService.js:34:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async submitMCQ (C:\Users\22wh1\OneDrive\Documents\ONEDRIVE\Attachments\Desktop\gaming_contest\backend\controllers\submissionController.js:10:20)
+2026-05-05 19:20:36 [error]: AppError: Already answered correctly
+    at Object.submitMCQ (C:\Users\22wh1\OneDrive\Documents\ONEDRIVE\Attachments\Desktop\gaming_contest\backend\services\submissionService.js:34:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async submitMCQ (C:\Users\22wh1\OneDrive\Documents\ONEDRIVE\Attachments\Desktop\gaming_contest\backend\controllers\submissionController.js:10:20)
+2026-05-05 19:20:40 [error]: AppError: Already answered correctly
+    at Object.submitMCQ (C:\Users\22wh1\OneDrive\Documents\ONEDRIVE\Attachments\Desktop\gaming_contest\backend\services\submissionService.js:34:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async submitMCQ (C:\Users\22wh1\OneDrive\Documents\ONEDRIVE\Attachments\Desktop\gaming_contest\backend\controllers\submissionController.js:10:20)
+2026-05-05 19:21:00 [info]: Socket connected: userId=69f9f55be66ae58f66fef5f4, socketId=rNtaD89Zm5F0E_FvAAAD
+2026-05-05 19:21:02 [info]: Socket disconnected: userId=69f9f55be66ae58f66fef5f4, socketId=rNtaD89Zm5F0E_FvAAAD
+2026-05-05 19:21:59 [info]: New user registered: demo1@gmail.com
+2026-05-05 19:22:15 [info]: User logged in: demo1@gmail.com
+2026-05-05 19:22:19 [info]: MCQ: user=69f9f5ffe66ae58f66fef5f8, correct=true, score=5
+2026-05-05 19:22:22 [info]: MCQ: user=69f9f5ffe66ae58f66fef5f8, correct=true, score=5
+2026-05-05 19:22:25 [info]: MCQ: user=69f9f5ffe66ae58f66fef5f8, correct=true, score=5
+2026-05-05 19:22:25 [info]: Qualification check for user 69f9f5ffe66ae58f66fef5f8 after phase 1: score=15, rank=8/11, threshold=10, cutoffRank=1, qualified=true
+2026-05-05 19:22:25 [info]: User 69f9f5ffe66ae58f66fef5f8 qualified for phase 2, password generated
+2026-05-05 19:22:25 [info]: Phase 1 completed → Qualified=true
+2026-05-05 19:23:27 [info]: New user registered: demo2@gmail.com
+2026-05-05 19:23:42 [info]: User logged in: demo2@gmail.com
+2026-05-05 19:23:47 [info]: MCQ: user=69f9f657e66ae58f66fef5fc, correct=true, score=5
+2026-05-05 19:23:51 [info]: MCQ: user=69f9f657e66ae58f66fef5fc, correct=true, score=5
+2026-05-05 19:23:55 [info]: MCQ: user=69f9f657e66ae58f66fef5fc, correct=true, score=5
+2026-05-05 19:23:55 [info]: Qualification check for user 69f9f657e66ae58f66fef5fc after phase 1: score=15, rank=8/12, threshold=10, cutoffRank=1, qualified=true
+2026-05-05 19:23:55 [info]: User 69f9f657e66ae58f66fef5fc qualified for phase 2, password generated
+2026-05-05 19:23:55 [info]: Phase 1 completed → Qualified=true
+2026-05-05 19:24:40 [info]: User 69f9f657e66ae58f66fef5fc unlocked phase 2
+2026-05-05 19:25:07 [info]: DEBUG: user=69f9f657e66ae58f66fef5fc, correct=false, score=-1
+2026-05-05 19:25:22 [info]: DEBUG: user=69f9f657e66ae58f66fef5fc, correct=true, score=15
+2026-05-05 19:25:34 [info]: DEBUG: user=69f9f657e66ae58f66fef5fc, correct=true, score=15
+2026-05-05 19:25:49 [info]: DEBUG: user=69f9f657e66ae58f66fef5fc, correct=false, score=-2
+2026-05-05 19:26:05 [info]: DEBUG: user=69f9f657e66ae58f66fef5fc, correct=true, score=20
+2026-05-05 19:26:05 [info]: Qualification check for user 69f9f657e66ae58f66fef5fc after phase 2: score=62, rank=5/12, threshold=10, cutoffRank=3, qualified=true
+2026-05-05 19:26:05 [info]: User 69f9f657e66ae58f66fef5fc qualified for phase 3, password generated
+2026-05-05 19:26:05 [info]: Phase 2 completed → Qualified=true
+2026-05-05 19:27:00 [info]: User 69f9f657e66ae58f66fef5fc unlocked phase 3
+2026-05-05 19:28:25 [info]: CODE: user=69f9f657e66ae58f66fef5fc, status=wrong, score=0
+2026-05-05 19:29:00 [info]: CODE: user=69f9f657e66ae58f66fef5fc, status=wrong, score=0
+2026-05-05 19:29:38 [info]: CODE: user=69f9f657e66ae58f66fef5fc, status=wrong, score=0
+2026-05-05 19:30:04 [info]: Socket connected: userId=69f9f657e66ae58f66fef5fc, socketId=xremeh62_W1lYxG_AAAF
+2026-05-05 19:30:11 [info]: Socket disconnected: userId=69f9f657e66ae58f66fef5fc, socketId=xremeh62_W1lYxG_AAAF
+2026-05-05 19:35:40 [info]: CODE: user=69f9f657e66ae58f66fef5fc, status=correct, score=20
+2026-05-05 19:36:06 [info]: Socket.IO initialized
+2026-05-05 19:36:06 [info]: 🚀 Server running on port 5000
+2026-05-05 19:36:07 [info]: MongoDB connected: localhost
+2026-05-05 19:40:02 [info]: CODE: user=69f9f657e66ae58f66fef5fc, status=wrong, score=-2
+2026-05-08 22:33:44 [info]: Socket.IO initialized
+2026-05-08 22:33:44 [info]: 🚀 Server running on port 5000
+2026-05-08 22:33:45 [info]: MongoDB connected: localhost
+2026-05-08 22:35:06 [error]: Error: Invalid email or password
+    at Object.login (C:\Users\22wh1\OneDrive\Documents\ONEDRIVE\Attachments\Desktop\gaming_contest\backend\services\authService.js:59:19)
+    at async login (C:\Users\22wh1\OneDrive\Documents\ONEDRIVE\Attachments\Desktop\gaming_contest\backend\controllers\authController.js:17:20)
+2026-05-08 22:35:17 [info]: User logged in: demo@gmail.com
+2026-05-08 22:39:45 [info]: Socket.IO initialized
+2026-05-08 22:39:45 [info]: 🚀 Server running on port 5000
+2026-05-08 22:39:45 [info]: MongoDB connected: localhost
+2026-05-23 13:25:16 [info]: Socket.IO initialized
+2026-05-23 13:25:16 [info]: 🚀 Server running on port 5000
+2026-05-23 13:25:16 [info]: MongoDB connected: localhost
+2026-05-23 13:26:01 [info]: User logged in: kumar@gmail.com
+2026-05-23 13:27:01 [error]: AppError: No test cases available for this question
+    at runDebugCode (C:\Users\22wh1\OneDrive\Documents\ONEDRIVE\Attachments\Desktop\gaming_contest\backend\controllers\submissionController.js:45:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-05-23 13:27:27 [info]: Socket connected: userId=69dfbaafa28a4511b099f945, socketId=BBIhvs2Si0n40Jt9AAAB
+2026-05-23 13:27:30 [info]: Socket disconnected: userId=69dfbaafa28a4511b099f945, socketId=BBIhvs2Si0n40Jt9AAAB
+2026-05-23 13:32:13 [info]: Socket.IO initialized
+2026-05-23 13:32:13 [info]: 🚀 Server running on port 5000
+2026-05-23 13:32:13 [info]: MongoDB connected: localhost
+2026-05-23 14:40:01 [info]: Socket.IO initialized
+2026-05-23 14:40:01 [info]: 🚀 Server running on port 5000
+2026-05-23 14:40:01 [info]: MongoDB connected: localhost
+2026-05-23 14:41:37 [info]: DEBUG: user=69dfbaafa28a4511b099f945, status=correct, score=20
+2026-05-23 14:42:04 [info]: DEBUG: user=69dfbaafa28a4511b099f945, status=correct, score=25
+2026-05-23 14:45:27 [info]: User logged in: sivani@gmail.com
+2026-05-23 14:45:34 [error]: AppError: Already answered correctly
+    at Object.submitMCQ (C:\Users\22wh1\OneDrive\Documents\ONEDRIVE\Attachments\Desktop\gaming_contest\backend\services\submissionService.js:34:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async submitMCQ (C:\Users\22wh1\OneDrive\Documents\ONEDRIVE\Attachments\Desktop\gaming_contest\backend\controllers\submissionController.js:10:20)
+2026-05-23 14:45:37 [info]: MCQ: user=69de4f9b6f5d79c03614359c, correct=true, score=5
+2026-05-23 14:45:37 [info]: Qualification check for user 69de4f9b6f5d79c03614359c after phase 1: score=5, rank=12/12, threshold=10, cutoffRank=1, qualified=false
+2026-05-23 14:45:37 [info]: User 69de4f9b6f5d79c03614359c eliminated after phase 1
+2026-05-23 14:45:37 [info]: Phase 1 completed → Qualified=false
+2026-05-23 14:48:49 [info]: New user registered: niketh@gmail.com
+2026-05-23 14:49:04 [info]: User logged in: niketh@gmail.com
+2026-05-23 14:49:09 [info]: MCQ: user=6a1170f9d7c5789b5e7d629b, correct=true, score=5
+2026-05-23 14:49:13 [info]: MCQ: user=6a1170f9d7c5789b5e7d629b, correct=true, score=5
+2026-05-23 14:49:16 [info]: MCQ: user=6a1170f9d7c5789b5e7d629b, correct=true, score=5
+2026-05-23 14:49:16 [info]: Qualification check for user 6a1170f9d7c5789b5e7d629b after phase 1: score=15, rank=8/13, threshold=10, cutoffRank=1, qualified=true
+2026-05-23 14:49:16 [info]: User 6a1170f9d7c5789b5e7d629b qualified for phase 2, password generated
+2026-05-23 14:49:16 [info]: Phase 1 completed → Qualified=true
+2026-05-23 14:50:21 [error]: Error: Incorrect phase password
+    at Object.validateAndUnlockPhase (C:\Users\22wh1\OneDrive\Documents\ONEDRIVE\Attachments\Desktop\gaming_contest\backend\services\phaseService.js:63:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async unlockPhase (C:\Users\22wh1\OneDrive\Documents\ONEDRIVE\Attachments\Desktop\gaming_contest\backend\controllers\phaseController.js:9:20)
+2026-05-23 14:50:50 [info]: User logged in: niketh@gmail.com
+2026-05-23 14:51:27 [info]: User 6a1170f9d7c5789b5e7d629b unlocked phase 2
+2026-05-23 14:51:50 [info]: DEBUG: user=6a1170f9d7c5789b5e7d629b, status=correct, score=20
+2026-05-23 14:52:21 [info]: DEBUG: user=6a1170f9d7c5789b5e7d629b, status=partial, score=12
+2026-05-23 14:52:21 [info]: Qualification check for user 6a1170f9d7c5789b5e7d629b after phase 2: score=47, rank=7/13, threshold=10, cutoffRank=3, qualified=true
+2026-05-23 14:52:21 [info]: User 6a1170f9d7c5789b5e7d629b qualified for phase 3, password generated
+2026-05-23 14:52:21 [info]: Phase 2 completed → Qualified=true
+2026-05-23 14:53:23 [info]: User 6a1170f9d7c5789b5e7d629b unlocked phase 3
+2026-05-23 14:55:17 [info]: CODE: user=6a1170f9d7c5789b5e7d629b, status=wrong, score=0
+2026-05-23 14:55:40 [info]: CODE: user=6a1170f9d7c5789b5e7d629b, status=wrong, score=0
+2026-05-23 14:56:23 [info]: CODE: user=6a1170f9d7c5789b5e7d629b, status=wrong, score=0
+2026-05-23 14:56:33 [info]: Socket connected: userId=6a1170f9d7c5789b5e7d629b, socketId=h81eEs-UVMCNJy37AAAB
+2026-05-23 14:56:43 [info]: Socket disconnected: userId=6a1170f9d7c5789b5e7d629b, socketId=h81eEs-UVMCNJy37AAAB
+2026-05-24 11:25:38 [info]: Socket.IO initialized
+2026-05-24 11:25:38 [info]: 🚀 Server running on port 5000
+2026-05-24 11:25:38 [info]: MongoDB connected: localhost
+2026-05-24 11:26:11 [info]: User logged in: niketh@gmail.com
+2026-05-24 11:28:07 [info]: CODE: user=6a1170f9d7c5789b5e7d629b, status=wrong, score=-2

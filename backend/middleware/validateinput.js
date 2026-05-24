@@ -33,11 +33,19 @@ const mcqSubmissionValidation = [
 
 const debugSubmissionValidation = [
   body('questionId').notEmpty().withMessage('Question ID is required'),
-  body('answer').notEmpty().withMessage('Answer is required'),
+  body('code').notEmpty().withMessage('Code is required'),
+  body('languageId').isInt({ min: 1 }).withMessage('Valid language ID is required'),
   body('hintsUsed')
     .optional()
     .isInt({ min: 0 })
     .withMessage('hintsUsed must be a non-negative integer'),
+  handleValidationErrors,
+];
+
+const debugRunValidation = [
+  body('questionId').notEmpty().withMessage('Question ID is required'),
+  body('code').notEmpty().withMessage('Code is required'),
+  body('languageId').isInt({ min: 1 }).withMessage('Valid language ID is required'),
   handleValidationErrors,
 ];
 
@@ -59,6 +67,7 @@ module.exports = {
   loginValidation,
   mcqSubmissionValidation,
   debugSubmissionValidation,
+  debugRunValidation,
   codeSubmissionValidation,
   phaseUnlockValidation,
 };

@@ -74,7 +74,38 @@ const submitMCQ = async ({ userId, questionId, answer, io }) => {
 
 // ======================= DEBUG =======================
 
-const submitDebug = async ({ userId, questionId, answer, hintsUsed = 0, io }) => {
+const runDebug = async ({ userId, questionId, code, languageId }) => {
+  const question = await Question.findById(questionId);
+  if (!question || question.type !== 'DEBUG') {
+    throw new AppError('Debug question not found', 404);
+  }
+
+  if (!code || typeof code !== 'string') {
+    throw new AppError('Code must be a non-empty string', 400);
+  }
+
+  const sampleTestCases = (question.testCases || []).filter((tc) => !tc.isHidden);
+  const testCasesToRun = sampleTestCases.length ? sampleTestCases : question.testCases || [];
+
+  if (!testCasesToRun.length) {
+    throw new AppError('No sample test cases available for debug run', 500);
+  }
+
+  const { results, passedCount, totalCount, allPassed } = await judge0Service.runAllTestCases({
+    sourceCode: code,
+    languageId: languageId || question.languageId,
+    testCases: testCasesToRun,
+  });
+
+  return {
+    results,
+    passedCount,
+    totalCount,
+    allPassed,
+  };
+};
+
+const submitDebug = async ({ userId, questionId, code, languageId, hintsUsed = 0, io }) => {
   const question = await Question.findById(questionId);
   if (!question || question.type !== 'DEBUG') {
     throw new AppError('Debug question not found', 404);
@@ -86,38 +117,29 @@ const submitDebug = async ({ userId, questionId, answer, hintsUsed = 0, io }) =>
     throw new AppError('Already solved', 400);
   }
 
-  // Debug logging
-  console.log('Debug submission:', {
-    userId,
-    questionId,
-    answer: answer ? `"${answer}"` : 'undefined/null',
-    correctAnswer: question.correctAnswer ? `"${question.correctAnswer}"` : 'undefined/null',
-    answerType: typeof answer,
-    correctAnswerType: typeof question.correctAnswer
+  if (!code || typeof code !== 'string') {
+    throw new AppError('Code must be a non-empty string', 400);
+  }
+
+  const { results, passedCount, totalCount, allPassed } = await judge0Service.runAllTestCases({
+    sourceCode: code,
+    languageId: languageId || question.languageId,
+    testCases: question.testCases || [],
   });
 
-  if (!answer || typeof answer !== 'string') {
-    throw new AppError('Answer must be a non-empty string', 400);
-  }
-
-  if (!question.correctAnswer || typeof question.correctAnswer !== 'string') {
-    throw new AppError('Question correct answer is missing or invalid', 500);
-  }
-
-  const isCorrect = answer.trim() === question.correctAnswer.trim();
-
   const { score, penalty } = scoringService.calculateDebugScore({
-  isCorrect,
-  marks: question.marks,
-  wrongSubmissionPenalty: question.wrongSubmissionPenalty, 
-  hintsUsed,
-  hintPenalty: question.hintPenalty,
-});
+    passedTestCases: passedCount,
+    totalTestCases: totalCount,
+    marks: question.marks,
+    wrongSubmissionPenalty: question.wrongSubmissionPenalty,
+    hintsUsed,
+    hintPenalty: question.hintPenalty,
+    isFirstAttempt: !existingSubmission,
+  });
 
+  const status = allPassed ? 'correct' : passedCount > 0 ? 'partial' : 'wrong';
   const attempts = existingSubmission ? existingSubmission.attempts + 1 : 1;
-
-  let scoreDelta = isCorrect ? score : -penalty;
-
+  const scoreDelta = status === 'wrong' ? -penalty : score;
   const previousScore = existingSubmission ? existingSubmission.score : 0;
   const scoreChange = scoreDelta - previousScore;
 
@@ -125,12 +147,14 @@ const submitDebug = async ({ userId, questionId, answer, hintsUsed = 0, io }) =>
     userId,
     phase: question.phase,
     questionId,
-    submittedAnswer: answer,
-    status: isCorrect ? 'correct' : 'wrong',
+    submittedCode: code,
+    languageId: languageId || question.languageId,
+    status,
     score: scoreDelta,
     penalty,
     hintsUsed,
     attempts,
+    testCaseResults: results,
   });
 
   await User.findByIdAndUpdate(userId, {
@@ -140,15 +164,17 @@ const submitDebug = async ({ userId, questionId, answer, hintsUsed = 0, io }) =>
     },
   });
 
-  logger.info(`DEBUG: user=${userId}, correct=${isCorrect}, score=${scoreDelta}`);
+  logger.info(`DEBUG: user=${userId}, status=${status}, score=${scoreDelta}`);
 
   await emitLeaderboardUpdate(io);
 
   return {
     submission,
-    isCorrect,
+    status,
     score: scoreDelta,
     penalty,
+    passedCount,
+    totalCount,
   };
 };
 
@@ -270,6 +296,7 @@ const checkPhaseCompletion = async ({ userId, phase, io }) => {
 
 module.exports = {
   submitMCQ,
+  runDebug,
   submitDebug,
   submitCode,
   checkPhaseCompletion,

@@ -29,15 +29,34 @@ const submitMCQ = async (req, res, next) => {
   }
 };
 
+const runDebug = async (req, res, next) => {
+  try {
+    const { questionId, code, languageId } = req.body;
+    const result = await submissionService.runDebug({
+      userId: req.user._id,
+      questionId,
+      code,
+      languageId,
+    });
+
+    return successResponse(res, 'Debug run successful', {
+      ...result,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 const submitDebug = async (req, res, next) => {
   try {
-    const { questionId, answer, hintsUsed } = req.body;
+    const { questionId, code, languageId, hintsUsed } = req.body;
     const io = req.app.get('io');
 
     const result = await submissionService.submitDebug({
       userId: req.user._id,
       questionId,
-      answer,
+      code,
+      languageId,
       hintsUsed: hintsUsed || 0,
       io,
     });
@@ -101,4 +120,4 @@ const getUserSubmissions = async (req, res, next) => {
   }
 };
 
-module.exports = { submitMCQ, submitDebug, submitCode, getUserSubmissions };
+module.exports = { submitMCQ, runDebug, submitDebug, submitCode, getUserSubmissions };
