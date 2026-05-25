@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -66,4 +66,42 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+} */
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: #050816;
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+::selection {
+  background: #00ffff;
+  color: black;
+}
+
+.glass-panel {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.neon-border {
+  box-shadow:
+    0 0 10px rgba(0,255,255,0.5),
+    0 0 20px rgba(0,255,255,0.2);
+}
+
+.cyber-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
